@@ -1,0 +1,53 @@
+table {
+  border-style: solid;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+th { 
+  border-style: solid;
+}
+
+td{
+  border-style: solid;
+  text-align: center;
+}
+
+#top{
+  text-align: center;
+  font-family: "Lucida Handwriting", cursive;
+  font-size: 30px;
+}
+
+#intro{
+  font-family: Helvitica, sans-serif;
+  text-align: center;
+  font-size: 25px;
+}
+
+h3{
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Stick', sans-serif;
+}
+
+ul{
+  text-align: center;
+  list-style: inside;
+}
+
+#p2{
+  font-size: 15px;
+  text-align: center;
+}
+
+#ty{
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+
+
+
