@@ -1,12 +1,11 @@
+//For Loops
+
 var img = new SimpleImage(200,200);
 print(img);
 
 //Make the square yellow
 var i;
 var j;
-//var g = img.getGreen();
-//var b = img.getBlue();
-//var r = img.getRed();
 
 for(i = 0; i < 200; i++){
     for(j =  0; j < 200; j++){
