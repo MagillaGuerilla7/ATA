@@ -1,0 +1,46 @@
+var img = new SimpleImage("chapel.png");
+var pic = new SimpleImage("chapel.png");
+var egg = new SimpleImage("eastereggs.jpg");
+
+//height and Width of Chapel
+var x = img.getWidth();
+var y = img.getHeight();
+
+//for loop variables
+var i;
+var j;
+
+
+print(img);
+//Turn Chapel Red
+for(i = 0; i < x; i++){
+    for(j = 0; j < y; j++){
+        img.setRed(i, j, 255);
+    }
+}
+
+print(img);
+
+print(pic);
+//Remove Chapel Red
+for(i = 0; i < x; i++){
+    for(j = 0; j < y; j++){
+        pic.setRed(i, j, 0);
+    }
+}
+
+print(pic);
+
+//Easter Egg 
+print(egg);
+var a = egg.getWidth();
+var b = egg.getHeight();
+
+for(i = 0; i < a; i++){
+    for(j = 0; j < b; j++){
+        if(egg.getRed(i, j) > 70)
+            egg.setRed(i, j, 0);
+    }
+}
+
+print(egg);

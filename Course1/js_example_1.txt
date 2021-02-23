@@ -1,0 +1,31 @@
+// JS Example 1
+var x = 3;
+var y = 4;
+var z = x + 2*y;
+
+print(x);
+print(y);
+
+var image = new SimpleImage("dinos.png");
+
+print(image.getWidth());
+print(image.getHeight());
+print(image.getPixel(16,32));
+print("red: " + image.getRed(16,32));
+print("green: " + image.getGreen(16,32));
+print("blue: " + image.getBlue(16,32));
+
+function square(x){
+	var ans = x*x;
+	return ans;
+}
+
+function cube(x){
+    var ans = x * x * x;
+    return ans;
+}
+
+var z = square(3);
+print("Square of 3 is " + z);
+var c = cube(3);
+print("3 cubed is " + c);

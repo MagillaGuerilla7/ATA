@@ -1,0 +1,82 @@
+//Part 1
+var img = new SimpleImage("hilton.jpg");
+
+//Width and Height
+var x = img.getWidth();
+var y = img.getHeight();
+
+//Finding pixel cutoff points
+var xlimit1 = Math.floor((x / 3));
+var xlimit2 = xlimit1 * 2;
+
+/*
+print(xlimit1);
+print(xlimit2);
+*/
+
+print(img);
+//Change Pixels
+var i;
+var j;
+
+for(i = 0; i < x; i++){
+    for(j = 0; j < y; j++){
+        if(i <= xlimit1)
+            img.setRed(i, j, 255);
+        else if (i <= xlimit2)
+            img.setGreen(i, j, 255);
+        else
+            img.setBlue(i, j, 255);
+    }
+}
+
+print(img);
+
+//*****Part2********
+
+var pic = new SimpleImage("smallpanda.png");
+
+//width and Height
+var a = pic.getWidth();
+var b = pic.getHeight();
+
+//red green swap
+function swapRedGreen(x, y){
+    var r = pic.getRed(x, y);
+    var g = pic.getGreen(x, y);
+    pic.setRed(x, y, g);
+    pic.setGreen(x, y, r);
+    return;
+}
+
+//for loop through each pixel
+print(pic);
+for(i = 0; i < a; i++){
+    for(j = 0; j < b; j++){
+        swapRedGreen(i, j);
+    }
+}
+
+print(pic);
+
+//*****Part 3*******
+var duke = new SimpleImage("duke_blue_devil.png");
+
+//Width and Height
+var w = duke.getWidth();
+var h = duke.getHeight();
+
+print(duke);
+for(i = 0; i < w; i++){
+    for(j = 0; j < h; j++){
+        if((duke.getRed(i, j) == 0) && (duke.getBlue(i, j) == 227) 
+            && (duke.getGreen(i, j) == 51) )
+        {
+            duke.setRed(i, j, 255);
+            duke.setBlue(i, j, 0);
+            duke.setGreen(i, j, 255);
+        }
+    }
+}
+
+print(duke);
