@@ -1,4 +1,6 @@
-//Part 1
+//Modifying Images
+
+//********************Part 1**************************
 var img = new SimpleImage("hilton.jpg");
 
 //Width and Height
@@ -8,11 +10,6 @@ var y = img.getHeight();
 //Finding pixel cutoff points
 var xlimit1 = Math.floor((x / 3));
 var xlimit2 = xlimit1 * 2;
-
-/*
-print(xlimit1);
-print(xlimit2);
-*/
 
 print(img);
 //Change Pixels
@@ -32,7 +29,7 @@ for(i = 0; i < x; i++){
 
 print(img);
 
-//*****Part2********
+//********************Part2***************************
 
 var pic = new SimpleImage("smallpanda.png");
 
@@ -40,7 +37,7 @@ var pic = new SimpleImage("smallpanda.png");
 var a = pic.getWidth();
 var b = pic.getHeight();
 
-//red green swap
+//red green swap Function
 function swapRedGreen(x, y){
     var r = pic.getRed(x, y);
     var g = pic.getGreen(x, y);
@@ -59,7 +56,7 @@ for(i = 0; i < a; i++){
 
 print(pic);
 
-//*****Part 3*******
+//*********************Part 3******************************
 var duke = new SimpleImage("duke_blue_devil.png");
 
 //Width and Height
@@ -67,6 +64,8 @@ var w = duke.getWidth();
 var h = duke.getHeight();
 
 print(duke);
+
+//Change Duke 'Blue' Devil to 'Yellow' Devil
 for(i = 0; i < w; i++){
     for(j = 0; j < h; j++){
         if((duke.getRed(i, j) == 0) && (duke.getBlue(i, j) == 227) 
