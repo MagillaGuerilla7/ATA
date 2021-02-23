@@ -1,6 +1,7 @@
+//Programming Exercise - Loops and Conditionals
+
+//*****************Part 1*******************
 var img = new SimpleImage("chapel.png");
-var pic = new SimpleImage("chapel.png");
-var egg = new SimpleImage("eastereggs.jpg");
 
 //height and Width of Chapel
 var x = img.getWidth();
@@ -9,7 +10,6 @@ var y = img.getHeight();
 //for loop variables
 var i;
 var j;
-
 
 print(img);
 //Turn Chapel Red
@@ -21,8 +21,15 @@ for(i = 0; i < x; i++){
 
 print(img);
 
+//***************Part 2*****************
+//Using x and y as width
+
+var pic = new SimpleImage("chapel.png");
+
 print(pic);
+
 //Remove Chapel Red
+//re-used i and j from the other loop
 for(i = 0; i < x; i++){
     for(j = 0; j < y; j++){
         pic.setRed(i, j, 0);
@@ -31,15 +38,20 @@ for(i = 0; i < x; i++){
 
 print(pic);
 
-//Easter Egg 
+//********************Part 3 ********************
+var egg = new SimpleImage("eastereggs.jpg");
+
 print(egg);
+
+//Get Width and Height of Easter Eggs
 var a = egg.getWidth();
 var b = egg.getHeight();
 
+//Set Red pixels
 for(i = 0; i < a; i++){
     for(j = 0; j < b; j++){
         if(egg.getRed(i, j) > 70)
-            egg.setRed(i, j, 0);
+            egg.setRed(i, j, 70);
     }
 }
 
