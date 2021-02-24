@@ -1,0 +1,83 @@
+//Advanced Modifying Images
+
+//*********************Part 1******************************
+var image = new SimpleImage("drewRobert.png");
+var backg = new SimpleImage("dinos.png");
+var output = new SimpleImage(backg.getWidth(), backg.getHeight());
+
+print(image);
+print(backg);
+print(output);
+for(var pixel of image.values()){
+    if((pixel.getGreen() > (pixel.getRed() + pixel.getBlue())))
+    {
+            var x = pixel.getX();
+            var y = pixel.getY();
+            output.setRed(x, y, backg.getRed(x, y));
+            output.setBlue(x, y, backg.getBlue(x, y));
+            output.setGreen(x, y, backg.getGreen(x, y));
+    }
+    else{
+            var x = pixel.getX();
+            var y = pixel.getY();
+            output.setRed(x, y, image.getRed(x, y));
+            output.setBlue(x, y, image.getBlue(x, y));
+            output.setGreen(x, y, image.getGreen(x, y));
+    }
+}
+print(output);
+
+//***************Part 2 ***********************
+var img = new SimpleImage(200,200);
+for (var px of img.values()){
+  var x = px.getX();
+  var y = px.getY();
+  if ((x < img.getWidth()/2) && (y < img.getHeight() / 2)){
+    px.setRed(255);
+  }
+  else if ((x >= img.getWidth()/2) && (y < img.getHeight() / 2 ) ){
+    px.setGreen(255);
+  }
+  else if((x < img.getWidth() / 2) && (y >= img.getHeight() / 2)){
+    px.setRed(255);
+    px.setBlue(255);
+  }
+  else{
+      px.setBlue(255);
+  }
+}
+print (img);
+
+//**********************Part 3*************************
+var panda = new SimpleImage("smallpanda.png");
+
+print(panda);
+
+addBorder(panda);
+
+print(panda);
+
+//function to change pixels black
+function changeBlack(x, y){
+    panda.setRed(x , y, 0);
+    panda.setBlue(x, y, 0);
+    panda.setGreen(x, y, 0);
+    return;
+}
+
+//Function to add border
+function addBorder(image){
+    for(var pix of image.values()){
+        var x = pix.getX();
+        var y = pix.getY();
+        
+        if(x < 10)
+            changeBlack(x, y);
+        else if (y < 10)
+            changeBlack(x, y);
+        else if((x + 1) >= image.getWidth() - 10)
+            changeBlack(x, y);
+        else if((y + 1) >= image.getHeight() - 10)
+            changeBlack(x, y);
+    }
+}
