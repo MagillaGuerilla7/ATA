@@ -59,10 +59,6 @@ print(pic);
 //*********************Part 3******************************
 var duke = new SimpleImage("duke_blue_devil.png");
 
-//Width and Height
-var w = duke.getWidth();
-var h = duke.getHeight();
-
 print(duke);
 for(var pixel of duke.values()){
     if((pixel.getBlue() > pixel.getRed()) && (pixel.getBlue() > pixel.getGreen()) )
