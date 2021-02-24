@@ -64,18 +64,14 @@ var w = duke.getWidth();
 var h = duke.getHeight();
 
 print(duke);
-
-//Change Duke 'Blue' Devil to 'Yellow' Devil
-for(i = 0; i < w; i++){
-    for(j = 0; j < h; j++){
-        if((duke.getRed(i, j) == 0) && (duke.getBlue(i, j) == 227) 
-            && (duke.getGreen(i, j) == 51) )
-        {
-            duke.setRed(i, j, 255);
-            duke.setBlue(i, j, 0);
-            duke.setGreen(i, j, 255);
-        }
+for(var pixel of duke.values()){
+    if((pixel.getBlue() > pixel.getRed()) && (pixel.getBlue() > pixel.getGreen()) )
+    {
+            var x = pixel.getX();
+            var y = pixel.getY();
+            duke.setRed(x, y, 255);
+            duke.setBlue(x, y, 0);
+            duke.setGreen(x, y, 255);
     }
 }
-
 print(duke);
